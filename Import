@@ -1,0 +1,103 @@
+Sub jour_en_rouge()
+
+Dim Mois, Jour As Variant
+
+Dim r, c As Byte
+
+Jour = Range("B1").Value
+Mois = Range("C1").Value
+
+Application.EnableEvents = False
+
+For r = 2 To 79 Step 7
+    For c = 1 To 32
+     If Cells(r, c).Interior.ColorIndex = 3 Then
+     Cells(r, c).Interior.ColorIndex = 1
+     Range(Cells(r + 1, c), Cells(r + 5, c)).Select
+     Call bordure_noire
+     End If
+    Next c
+Next r
+
+
+Select Case Mois
+        Case 1
+           Cells(Mois + 1, 1).Interior.ColorIndex = 3
+            Cells(Mois + 1, Jour + 1).Interior.ColorIndex = 3
+            Range(Cells(Mois + 2, Jour + 1), Cells(Mois + 6, Jour + 1)).Select
+            
+             Call bordure_rouge
+              Cells(Mois + 1, Jour + 1).Select
+        Case 2
+           Cells(Mois + 7, 1).Interior.ColorIndex = 3
+            Cells(Mois + 7, Jour + 1).Interior.ColorIndex = 3
+            Range(Cells(Mois + 8, Jour + 1), Cells(Mois + 12, Jour + 1)).Select
+            Call bordure_rouge
+             Cells(Mois + 7, Jour + 1).Select
+        Case 3
+           Cells(Mois + 13, 1).Interior.ColorIndex = 3
+            Cells(Mois + 13, Jour + 1).Interior.ColorIndex = 3
+            Range(Cells(Mois + 14, Jour + 1), Cells(Mois + 18, Jour + 1)).Select
+            Call bordure_rouge
+             Cells(Mois + 13, Jour + 1).Select
+        Case 4
+           Cells(Mois + 19, 1).Interior.ColorIndex = 3
+            Cells(Mois + 19, Jour + 1).Interior.ColorIndex = 3
+            Range(Cells(Mois + 20, Jour + 1), Cells(Mois + 24, Jour + 1)).Select
+            Call bordure_rouge
+             Cells(Mois + 19, Jour + 1).Select
+        Case 5
+           Cells(Mois + 25, 1).Interior.ColorIndex = 3
+            Cells(Mois + 25, Jour + 1).Interior.ColorIndex = 3
+            Range(Cells(Mois + 26, Jour + 1), Cells(Mois + 30, Jour + 1)).Select
+            Call bordure_rouge
+             Cells(Mois + 25, Jour + 1).Select
+        Case 6
+           Cells(Mois + 31, 1).Interior.ColorIndex = 3
+            Cells(Mois + 31, Jour + 1).Interior.ColorIndex = 3
+            Range(Cells(Mois + 32, Jour + 1), Cells(Mois + 36, Jour + 1)).Select
+            Call bordure_rouge
+             Cells(Mois + 31, Jour + 1).Select
+        Case 7
+           Cells(Mois + 37, 1).Interior.ColorIndex = 3
+            Cells(Mois + 37, Jour + 1).Interior.ColorIndex = 3
+            Range(Cells(Mois + 38, Jour + 1), Cells(Mois + 42, Jour + 1)).Select
+            Call bordure_rouge
+             Cells(Mois + 37, Jour + 1).Select
+        Case 8
+           Cells(Mois + 43, 1).Interior.ColorIndex = 3
+            Cells(Mois + 43, Jour + 1).Interior.ColorIndex = 3
+            Range(Cells(Mois + 44, Jour + 1), Cells(Mois + 48, Jour + 1)).Select
+            Call bordure_rouge
+             Cells(Mois + 43, Jour + 1).Select
+        Case 9
+           Cells(Mois + 49, 1).Interior.ColorIndex = 3
+            Cells(Mois + 49, Jour + 1).Interior.ColorIndex = 3
+            Range(Cells(Mois + 50, Jour + 1), Cells(Mois + 54, Jour + 1)).Select
+            Call bordure_rouge
+             Cells(Mois + 49, Jour + 1).Select
+        Case 10
+           Cells(Mois + 55, 1).Interior.ColorIndex = 3
+            Cells(Mois + 55, Jour + 1).Interior.ColorIndex = 3
+            Range(Cells(Mois + 56, Jour + 1), Cells(Mois + 60, Jour + 1)).Select
+            Call bordure_rouge
+             Cells(Mois + 55, Jour + 1).Select
+        Case 11
+           Cells(Mois + 61, 1).Interior.ColorIndex = 3
+            Cells(Mois + 61, Jour + 1).Interior.ColorIndex = 3
+            Range(Cells(Mois + 62, Jour + 1), Cells(Mois + 66, Jour + 1)).Select
+            Call bordure_rouge
+             Cells(Mois + 61, Jour + 1).Select
+        Case 12
+           Cells(Mois + 67, 1).Interior.ColorIndex = 3
+            Cells(Mois + 67, Jour + 1).Interior.ColorIndex = 3
+            Range(Cells(Mois + 68, Jour + 1), Cells(Mois + 72, Jour + 1)).Select
+            Call bordure_rouge
+             Cells(Mois + 67, Jour + 1).Select
+End Select
+
+Application.EnableEvents = True
+Range("A1").Select
+
+End Sub
+
